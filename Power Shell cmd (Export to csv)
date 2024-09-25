@@ -1,0 +1,6 @@
+
+sqlcmd -S vdatafeeddb -d DataTeam -E -h-1 -o "\\vdatafeeddb\d$\Shiraz Test Data\Extract\ShirazTestExtract.csv" -Q "set nocount on; SELECT * FROM DataTeam.dbo.tCintra_Testing" -W -w 999 -s","
+                                                  OR
+#Requires -Module SqlServer
+Invoke-Sqlcmd -Query "set nocount on; SELECT * FROM DataTeam.dbo.tCintra_Testing;" -Database DataTeam -Server vdatafeeddb | Export-Csv -NoTypeInformation -Path "\\vdatafeeddb\d$\Shiraz Test Data\Extract\ShirazTestExtract.csv" -Encoding UTF8
+
