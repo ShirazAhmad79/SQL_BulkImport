@@ -1,0 +1,4 @@
+
+  UPDATE t_Student_Detail SET UserDefined18 = AC.AVG_CODE
+  FROM t_CUSTOM_AVG_CODE AC INNER JOIN t_Student_Detail SD
+  ON AC.REFNO = SD.REFNO WHERE SD.AcademicYearID = '24/25'
